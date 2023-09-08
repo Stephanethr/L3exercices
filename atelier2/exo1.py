@@ -116,10 +116,30 @@ def moy_sup(list: list, e: int) -> float:
         float: _description_
     """
     list_sup = []
+
     for elt in list:
         if elt > e:
             list_sup.append(elt)
     return moyenne(list_sup)
+
+
+def moy_sup_v2(list: list, e: int) -> float:
+    """_summary_
+
+    Args:
+        list (list): _description_
+        e (int): _description_
+
+    Returns:
+        float: _description_
+    """
+    somme = 0
+    nbnum = nb_sup1(list)
+
+    for elt in list:
+        if elt > e:
+            somme += elt
+    return somme / nbnum
 
 
 def val_max(list: list) -> int:
@@ -210,6 +230,9 @@ def test_exercice1():
 
     # test moy_sup
     print("test moy_sup : ", moy_sup(list2, 6))
+
+    # test moy_sup_v2
+    print("test moy_sup_v2 : ", moy_sup_v2(list2, 6))
 
     # test val_max
     print("test val_max : ", val_max(list2))
