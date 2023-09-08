@@ -133,9 +133,9 @@ def val_max(list: list) -> int:
     """
     val_max = 0
 
-    for i in list:
-        if i > val_max:
-            val_max = i
+    for elt in list:
+        if elt > val_max:
+            val_max = elt
     return val_max
 
 
