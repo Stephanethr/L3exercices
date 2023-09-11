@@ -225,6 +225,7 @@ def date_est_valide(jour: int, mois: int, annee: int) -> bool:
     else:
         return True
 
+
 # Fonction pour saisir une date de naissance depuis le clavier
 def saisie_date_naissance() -> date:
     while True:
@@ -233,11 +234,15 @@ def saisie_date_naissance() -> date:
             mois = int(input("Entrez le mois de naissance : "))
             jour = int(input("Entrez le jour de naissance : "))
             if date_est_valide(jour, mois, annee):
-                return datetime.date(annee, mois, jour)  # Utilisation de datetime.date() pour créer un objet date
+                return datetime.date(
+                    annee, mois, jour
+                )  # Utilisation de datetime.date() pour créer un objet date
             else:
                 print("Date invalide. Veuillez entrer une date de naissance valide.")
         except ValueError:
-            print("Erreur de saisie. Veuillez entrer des entiers pour l'année, le mois et le jour.")
+            print(
+                "Erreur de saisie. Veuillez entrer des entiers pour l'année, le mois et le jour."
+            )
 
 
 # Fonction pour calculer l'âge
@@ -251,8 +256,16 @@ def age(date_naissance: date) -> int:
         int: _description_
     """
     aujourdhui = datetime.date.today()
-    age = aujourdhui.year - date_naissance.year - ((aujourdhui.month, aujourdhui.day) < (date_naissance.month, date_naissance.day))
+    age = (
+        aujourdhui.year
+        - date_naissance.year
+        - (
+            (aujourdhui.month, aujourdhui.day)
+            < (date_naissance.month, date_naissance.day)
+        )
+    )
     return age
+
 
 # Fonction pour vérifier si une personne est majeure
 def est_majeur(date_naissance: date) -> bool:
@@ -267,10 +280,6 @@ def est_majeur(date_naissance: date) -> bool:
     return age(date_naissance) >= 18
 
 
-d = datetime.date(1998, 4, 8)
-
-print(d)
-
 # Procédure de test d'accès
 def test_acces():
     date_naissance = saisie_date_naissance()
@@ -279,6 +288,7 @@ def test_acces():
         print(f"Bonjour, vous avez {age_personne} ans, Accès autorisé.")
     else:
         print(f"Désolé, vous avez {age_personne} ans, Accès interdit.")
+
 
 # Test des fonctions et procédures
 test_acces()
