@@ -134,7 +134,7 @@ def moy_sup_v2(list: list, e: int) -> float:
         float: _description_
     """
     somme = 0
-    nbnum = nb_sup1(list)
+    nbnum = nb_sup1(list, e)
 
     for elt in list:
         if elt > e:
