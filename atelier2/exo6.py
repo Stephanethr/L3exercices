@@ -228,8 +228,7 @@ def pos3(L, e):
 
 
 def correction_pos3(L, e):
-    nb = L.count(e)
-    Lres = [0] * nb
+    Lres = []
     for i in range(0, len(L), 1):
         if L[i] == e:
             Lres.append(i)
@@ -248,12 +247,10 @@ def pos4(L, e):
 
 
 def correction_pos4(L, e):
-    nb = L.count(e)
-    Lres = [0] * nb
-    j = 0
+    Lres = []
     for i in range(0, len(L), 1):
         if L[i] == e:
-            Lres[j] = i
+            Lres.append(i)
     return Lres
 
 
