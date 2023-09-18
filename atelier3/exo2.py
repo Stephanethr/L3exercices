@@ -107,6 +107,10 @@ def finissent_par(lst_mot: list, suffixe: str) -> list:
     return lst_res
 
 
+def finissent_par_v2(lst_mot: list, suffixe: str) -> list:
+    return [mot for mot in lst_mot if finit_par(mot, suffixe)]
+
+
 def commencent_par(lst_mot: list, prefixe: str) -> list:
     """_summary_
 
@@ -140,7 +144,55 @@ lst_mot = [
 ]
 
 suffixe = "voir"
-prefixe = "bon"
+prefixe = "re"
 
 print(f"finissent par {suffixe} : ", finissent_par(lst_mot, suffixe))
+print(f"finissent par v2 {suffixe} : ", finissent_par(lst_mot, suffixe))
+
 print(f"commencent par {prefixe} : ", commencent_par(lst_mot, prefixe))
+
+
+def list_mots(lst_mot: list, prefixe: str, suffixe: str, n: str) -> list:
+    """_summary_
+
+    Args:
+        lst_mot (list): _description_
+        prefixe (str): _description_
+        suffixe (str): _description_
+        n (int): _description_
+
+    Returns:
+        list: _description_
+    """
+    lst_res = []
+    lst_mot_n_lettre = mots_Nlettres(lst_mot, n)
+
+    for mot in lst_mot_n_lettre:
+        if commence_par(mot, prefixe) and finit_par(mot, suffixe):
+            lst_res.append(mot)
+    return lst_res
+
+
+n = "e"
+print("list mots : ", list_mots(lst_mot, prefixe, suffixe, n))
+
+
+def dictionnaire(fichier: str) -> list:
+    """_summary_
+
+    Args:
+        fichier (str): _description_
+
+    Returns:
+        list: _description_
+    """
+    fichier = open(fichier, "r")
+    line = fichier.readline()
+    res = []
+    while line != "":
+        res.append(line)
+        line = fichier.readline()
+    return res
+
+
+# print(dictionnaire("./atelier3/littre.txt"))
