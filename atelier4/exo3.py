@@ -2,16 +2,20 @@ import random
 
 
 def choose_element_list(list_in_which_to_choose: list) -> any:
-    """_summary_
+    """
+    Choisi un élément au hasard dans une liste donnée.
 
     Args:
-        list_in_which_to_choose (list): _description_
+        list_in_which_to_choose (list): La liste à partir de laquelle choisir un élément.
 
     Returns:
-        any: _description_
+        any: L'élément choisi au hasard de la liste.
     """
+    # Utilise random.randint pour générer un index aléatoire dans la plage des indices de la liste.
+    random_index = random.randint(0, len(list_in_which_to_choose) - 1)
 
-    return list_in_which_to_choose[random.randint(0, len(list_in_which_to_choose) - 1)]
+    # Retourne l'élément de la liste correspondant à l'index aléatoire.
+    return list_in_which_to_choose[random_index]
 
 
 listtest = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 45]
