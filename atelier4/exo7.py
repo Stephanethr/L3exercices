@@ -1,6 +1,8 @@
 from exo6 import sort_list  # Importez la fonction sort_list de exo6.py.
 from exo2 import mix_list  # Importez la fonction mix_list de exo2.py.
 
+# Question 1
+
 
 def stupid_sort(lst_to_sort: list) -> list:
     """
@@ -28,6 +30,8 @@ def stupid_sort(lst_to_sort: list) -> list:
 
 lst = [1, 6, 7, 2, 9, 4]
 # print(stupid_sort(lst))  # Appelle la fonction pour trier la liste et l'affiche.
+
+# Question 2
 
 
 def tri_insertion(lst: list) -> list:
@@ -62,6 +66,47 @@ def tri_insertion(lst: list) -> list:
 print(tri_insertion(lst))
 
 
+# Question 3
+
+
 def tri_selection(lst: list) -> list:
-    res = []
-    # for i in range()
+    """
+    Trie un tableau t par ordre croissant en utilisant l'algorithme de tri par sélection.
+
+    Args:
+        t (list): Le tableau à trier.
+
+    Returns:
+        list: Le tableau trié par ordre croissant.
+    """
+    t = lst.copy()
+    n = len(t)
+    for i in range(n - 1):
+        min_index = i
+        for j in range(i + 1, n):
+            if t[j] < t[min_index]:
+                min_index = j
+        if min_index != i:
+            t[i], t[min_index] = t[min_index], t[i]
+    return t
+
+
+print(f"test tri_selection avec comme list {lst} : ", tri_selection(lst))
+
+
+# Question 4
+
+
+def buble_sort(list_to_sort: list) -> list:
+    lst = list_to_sort.copy()
+    len_list = len(lst)
+    for i in range(len_list - 1):
+        for j in range(0, len_list - i - 1):
+            print(lst)
+            if lst[j + 1] < lst[j]:
+                lst[j + 1], lst[j] = lst[j], lst[j + 1]
+    return lst
+
+
+lst2 = [4, 2, 3, 1]
+print(f"test buble_sort avec comme list {lst2} : ", buble_sort(lst2))

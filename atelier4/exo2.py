@@ -22,17 +22,16 @@ def mix_list(list_to_mix: list) -> list:
         # Insère l'élément de la liste d'entrée à une position aléatoire dans la liste mélangée.
         mixed_list.insert(random.randint(0, len_list_to_mix), list_to_mix[i])
         i += 1  # Passe à l'élément suivant de la liste d'entrée.
-
+        print(i)
         # Si la liste mélangée devient identique à la liste d'entrée, réinitialise la liste mélangée et le compteur.
         if list_to_mix == mixed_list:
             mixed_list.clear()
             i = 0
+            print("reset")
 
     return mixed_list  # Retourne la liste mélangée de manière aléatoire.
 
 
-"""
-liste_triee = gen_list_random_int(6, 0, 50)
+liste_triee = gen_list_random_int(3, 0, 50)
 liste_mixee = mix_list(liste_triee)
 print("liste triée : ", liste_triee, " ; Liste mélangée : ", liste_mixee)
-"""
