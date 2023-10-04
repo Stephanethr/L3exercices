@@ -12,9 +12,7 @@ public class Vecteur3D {
     }
 
     public Vecteur3D() {
-        this.x = 0;
-        this.y = 0;
-        this.z = 0;
+        this(0, 0, 0);
     }
 
     public String toString() {
