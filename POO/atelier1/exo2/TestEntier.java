@@ -9,7 +9,7 @@ public class TestEntier {
         // Création d'entiers avec différentes configurations
         Entier entier1 = new Entier(1, 7);
         Entier entier2 = new Entier(1, 7, 3);
-        EntierFou entierFou1 = new EntierFou(1, 10000, 3, 4);
+        EntierFou entierFou1 = new EntierFou(1, 10000, 3, 7);
         Entier entierErreur1 = new Entier(3, 1); // Les bornes sont inversées, une erreur sera affichée.
         Entier entierErreur2 = new Entier(1, 7, 8); // La valeur est en dehors des bornes, une erreur sera affichée.
 
@@ -30,7 +30,7 @@ public class TestEntier {
         System.out.println(entierFou1);
 
         // Incrémentation de l'entier fou jusqu'à ce qu'il atteigne sa borne maximale
-        while (entierFou1.getValue() < entierFou1.getBorneMaxi()) {
+        while (entierFou1.getValue() < entierFou1.getBorneMaxi() - 1) {
             entierFou1.incrementeValue();
             System.out.println(entierFou1);
         }

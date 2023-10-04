@@ -41,6 +41,6 @@ public class EntierFou extends Entier {
      * folie.
      */
     public void incrementeValue() {
-        this.setValue(this.getValue() + r.nextInt(this.niveauDeFolie));
+        super.incrementeValue(r.nextInt(this.niveauDeFolie));
     }
 }
