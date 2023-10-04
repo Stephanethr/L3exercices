@@ -10,6 +10,8 @@ public class De {
     private String nom; // Le nom du dé.
     private int nbFaces; // Le nombre de faces du dé.
     private static Random r = new Random();
+    private final static int MAXFACE = 120;
+    private final static int MINFACE = 3;
     public static int nbDe = 0; // Le nombre total de dés créés.
     public static ArrayList<De> listDe = new ArrayList<De>(); // Liste des dés créés.
 
@@ -64,7 +66,7 @@ public class De {
      * @return Le nombre de faces validé ou -1 en cas d'erreur.
      */
     public int verifNbFaces(int nb) {
-        if (nb >= 3 && nb <= 120) {
+        if (nb >= MINFACE && nb <= MAXFACE) {
             return nb;
         } else {
             System.err.println("Le nombre de faces du dé : " + this.nom + " n'est pas compris entre 3 et 120 inclus.");

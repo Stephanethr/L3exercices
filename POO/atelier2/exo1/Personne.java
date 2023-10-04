@@ -110,7 +110,7 @@ public class Personne {
 	}
 
 	public boolean plusAgeeQue(Personne personne2) {
-		return this.dateNaissance.after(personne2.dateNaissance);
+		return this.dateNaissance.before(personne2.dateNaissance);
 	}
 
 	public boolean equals(Object obj) {
