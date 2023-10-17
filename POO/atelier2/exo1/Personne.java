@@ -105,7 +105,7 @@ public class Personne {
 		return result;
 	}
 
-	public boolean plusAgee(Personne personne1, Personne personne2) {
+	public static boolean plusAgee(Personne personne1, Personne personne2) {
 		return personne1.dateNaissance.before(personne2.dateNaissance);
 	}
 
